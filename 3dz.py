@@ -1,500 +1,247 @@
 ## 4.1
 #a = float(input())
 #b = float(input())
-#
-#if a < b:
-#    print(b, '>', a)
-#elif a > b:
-#    print(a, '>', b)
-#else:
-#    print('числа равны')
-#
+#print(f"{a} больше, {b} меньше" if a > b else f"{b} больше, {a} меньше")
 #
 ## 4.2
-#from math import sin
+#import math
 #
 #x = float(input())
-#
-#y = sin(x) ** 2 if x > 0 else 1 - 2 * sin(x ** 2)
-#
-#print(y)
+#y = math.sin(x) ** 2 if x > 0 else 1 - 2 * math.sin(x ** 2)
+#print(f"y = {y}")
 #
 ## 4.3
-#from math import sin
+#import math
 #
 #x = float(input())
-#
-#y = sin(x ** 2) if x > 0 else 1 + 2 * (sin(x)) ** 2
-#
-#print(y)
-#
+#y = math.sin(x ** 2) if x > 0 else 1 + 2 * math.sin(x) ** 2
+#print(f"y = {y}")
 #
 ## 4.4
 #x = float(input())
-#
-#if x > 4:
-#    print(2)
-#else:
-#    print(1)
-#
+#y = float(input())
+#print(
+#    "во вторую" if x > 4 and y > 0
+#    else "в первую" if x < 4 and y > 0
+#    else "ни в одну из них"
+#)
 #
 ## 4.5
+#x = float(input())
 #y = float(input())
-#
-#if y > 3:
-#    print(1)
-#else:
-#    print(2)
-#
-#
-## 4.6a
-#x = float(input())
-#
-#if x <= 2:
-#    y = x
-#else:
-#    y = 2
-#
-#print(y)
-#
-#
-## 4.6b
-#x = float(input())
-#
-#if x <= 3:
-#    y = -x
-#else:
-#    y = -3
-#
-#print(y)
-#
+#print(
+#    "в первую" if x > 0 and y > 3
+#    else "во вторую" if x > 0 and y < 3
+#    else "ни в одну из них"
+#)
 #
 ## 4.7
-#from math import sin
+#import math
 #
 #x = float(input())
-#
-#if sin(x) < 0:
-#    k = x ** 2
-#else:
-#    k = abs(x)
-#
-#if k < x:
-#    f = k * x
-#else:
-#    f = k + x
-#
-#print(f)
-#
+#a = math.sin(x)
+#k = x ** 2 if a > 0 else abs(x)
+#f = k * x if k < x else k + x
+#print(f"f = {f}")
 #
 ## 4.8
-#from math import sin
+#import math
 #
 #x = float(input())
-#
-#if sin(x) >= 0:
-#    k = x ** 2
-#else:
-#    k = abs(x)
-#
-#if x < k:
-#    f = abs(x)
-#else:
-#    f = k * x
-#
-#print(f)
-#
+#a = math.sin(x)
+#k = abs(x) if a < 0 else x ** 2
+#f = abs(x) if x < k else k * x
+#print(f"f = {f}")
 #
 ## 4.9
-#a = float(input())
-#b = float(input())
-#
-#maximum = a
-#minimum = b
-#
-#if a < b:
-#    maximum = b
-#    minimum = a
-#
-#print(f'maximum = {maximum}, minimum = {minimum}')
-#
+#a, b = map(float, input().split())
+#print(
+#    f"{a} — максимум, {b} — минимум" if a > b
+#    else f"{b} — максимум, {a} — минимум"
+#)
 #
 ## 4.10
-#a = float(input('в км: '))
-#b = float(input('в футах: '))
+#km = float(input("Введите километры: "))
+#funt = float(input("Введите футы: "))
+#funt_m = funt * 0.3048
 #
-#ma = a * 1000
-#mb = b * 0.3048
-#
-#if ma > mb:
-#    print(a)
-#elif ma < mb:
-#    print(b)
-#else:
-#    print('они равны')
-#
+#print(
+#    "в километрах меньше" if km > funt_m
+#    else "в футах меньше" if funt_m > km
+#    else "они равны"
+#)
 #
 ## 4.11
-#v1 = float(input())
-#v2 = float(input())
+#v1 = float(input("Введите скорость в км/ч: "))
+#v2 = float(input("Введите скорость в м/с: "))
 #
-#mv1 = v1 * 10 / 36
-#
-#if mv1 > v2:
-#    print(v1)
-#elif mv1 < v2:
-#    print(v2)
-#else:
-#    print('они равны')
-#
+#v1_ms = v1 * (5 / 18)
+#print(
+#    "в км/ч больше" if v1_ms > v2
+#    else "в м/с больше" if v2 > v1_ms
+#    else "они равны"
+#)
 #
 ## 4.12
-#from math import pi
+#import math
 #
-#r = float(input('радиус круга: '))
-#a = float(input('сторона квадрата: '))
+#r = float(input("Введите радиус круга: "))
+#a = float(input("Введите сторону квадрата: "))
 #
-#skr = pi * r ** 2
-#skv = a ** 2
+#s_kv = a ** 2
+#s_kr = math.pi * r ** 2
 #
-#if skr > skv:
-#    print('площадь круга больше')
-#elif skr < skv:
-#    print('площадь квадрата больше')
-#else:
-#    print('они равны')
-#
+#print("площадь квадрата больше" if s_kv > s_kr else "площадь круга больше")
 #
 ## 4.13
-#v1 = float(input('объем первого: '))
-#m1 = float(input('масса первого: '))
-#v2 = float(input('объем второго: '))
-#m2 = float(input('масса второго: '))
+#m1 = float(input("Введите массу 1: "))
+#m2 = float(input("Введите массу 2: "))
+#v1 = float(input("Введите объём 1: "))
+#v2 = float(input("Введите объём 2: "))
 #
 #p1 = m1 / v1
 #p2 = m2 / v2
+#print("плотность 1 больше" if p1 > p2 else "плотность 2 больше")
 #
-#if p1 > p2:
-#    print('плотность первого больше')
-#elif p1 < p2:
-#    print('плотность второго больше')
-#else:
-#    print('они равны')
-#
-#
-## 4.14
-#r1 = float(input('сопротивление первого: '))
-#u1 = float(input('напряжение первого: '))
-#r2 = float(input('сопротивление второго: '))
-#u2 = float(input('напряжение второго: '))
-#
-#i1 = u1 / r1
-#i2 = u2 / r2
-#
-#if i1 > i2:
-#    print('ток первого больше')
-#elif i1 < i2:
-#    print('ток второго больше')
-#else:
-#    print('они равны')
-#
-#
-## 4.15
-#a = float(input())
-#b = float(input())
-#c = float(input())
-#
+## 4.15–4.16
+#a, b, c = map(float, input("Введите a, b, c: ").split())
 #d = b ** 2 - 4 * a * c
 #
-#if d >= 0:
-#    print('корни есть')
+#if d > 0:
+#    x1 = (-b + d ** 0.5) / (2 * a)
+#    x2 = (-b - d ** 0.5) / (2 * a)
+#    print(f"Уравнение имеет два корня: x1 = {x1}, x2 = {x2}")
+#elif d == 0:
+#    x = -b / (2 * a)
+#    print(f"Уравнение имеет один корень: x = {x}")
 #else:
-#    print('корней нет')
-#
-#
-## 4.16
-#from math import sqrt
-#
-#a = float(input())
-#b = float(input())
-#c = float(input())
-#
-#d = b ** 2 - 4 * a * c
-#
-#if d >= 0:
-#    x1 = (-b + sqrt(d)) / (2 * a)
-#    x2 = (-b - sqrt(d)) / (2 * a)
-#    print(x1, x2)
-#else:
-#    print('корней нет')
-#
+#    print("Корней нет")
 #
 ## 4.17
-#year_birth = int(input())
-#month_birth = int(input())
-#year_now = int(input())
-#month_now = int(input())
+#god_roj = int(input("Год рождения: "))
+#mes_roj = int(input("Месяц рождения: "))
+#god = int(input("Текущий год: "))
+#mes = int(input("Текущий месяц: "))
 #
-#age = year_now - year_birth
+#age = god - god_roj if mes_roj <= mes else god - god_roj - 1
+#print(f"Возраст: {age}")
 #
-#if month_birth > month_now:
-#    age -= 1
-#
-#print(age)
-#
-#
-## 4.18a
+## 4.18
 #import math
 #
-#s_circle = float(input('площадь круга: '))
-#s_square = float(input('площадь квадрата: '))
+#s_kv = float(input("Введите площадь квадрата: "))
+#s_kr = float(input("Введите площадь круга: "))
 #
-#r = math.sqrt(s_circle / math.pi)
-#a = math.sqrt(s_square)
+#a = s_kv ** 0.5
+#r = (s_kr / math.pi) ** 0.5
 #
-#if 2 * r <= a:
-#    print('Круг уместится в квадрате.')
+#if r < a / 2:
+#    print("Круг уместится внутри квадрата, квадрат в круге — нет")
 #else:
-#    print('Круг не уместится в квадрате.')
-#
-#
-## 4.18b
-#import math
-#
-#s_circle = float(input('площадь круга: '))
-#s_square = float(input('площадь квадрата: '))
-#
-#r = math.sqrt(s_circle / math.pi)
-#a = math.sqrt(s_square)
-#
-#if a * math.sqrt(2) <= 2 * r:
-#    print('Квадрат уместится в круге.')
-#else:
-#    print('Квадрат не уместится в круге.')
-#
+#    print("Круг не уместится внутри квадрата, квадрат уместится в круге")
 #
 ## 4.19
 #import math
 #
-#s_circle = float(input('площадь круга: '))
-#s_triangle = float(input('площадь равностороннего треугольника: '))
+#s_tr = float(input("Введите площадь треугольника: "))
+#s_kr = float(input("Введите площадь круга: "))
 #
-#r = math.sqrt(s_circle / math.pi)
-#a = math.sqrt((4 * s_triangle) / math.sqrt(3))
-#r_in = a * math.sqrt(3) / 6
-#r_out = a * math.sqrt(3) / 3
+#r = (s_kr / math.pi) ** 0.5
+#a = ((4 * s_tr) / math.sqrt(3)) ** 0.5
+#r_vpis = a * (3 ** 0.5) / 6
+#r_opis = a * (3 ** 0.5) / 3
 #
-#if r <= r_in:
-#    print('а) Круг уместится в треугольнике.')
+#if r <= r_vpis:
+#    print("Круг уместится в треугольнике")
 #else:
-#    print('а) Круг не уместится в треугольнике.')
+#    print("Круг не уместится в треугольнике")
 #
-#if r_out <= r:
-#    print('б) Треугольник уместится в круге.')
+#if r_opis <= r:
+#    print("Треугольник уместится в круге")
 #else:
-#    print('б) Треугольник не уместится в круге.')
+#    print("Треугольник не уместится в круге")
+#
+## 4.20 
 #
 #
-## 4.20
-#x1_1 = float(input('x левого нижнего угла первого прямоугольника: '))
-#y1_1 = float(input('y левого нижнего угла первого прямоугольника: '))
-#x2_1 = float(input('x правого верхнего угла первого прямоугольника: '))
-#y2_1 = float(input('y правого верхнего угла первого прямоугольника: '))
+## 4.99(a)
+#a, b = map(float, input("Введите a и b: ").split())
+#print("a больше b" if a > b else "b больше a" if b > a else "равны")
 #
-#x1_2 = float(input('x левого нижнего угла второго прямоугольника: '))
-#y1_2 = float(input('y левого нижнего угла второго прямоугольника: '))
-#x2_2 = float(input('x правого верхнего угла второго прямоугольника: '))
-#y2_2 = float(input('y правого верхнего угла второго прямоугольника: '))
+## 4.100
+#a, b = map(float, input("Введите a и b: ").split())
+#print(f"a наибольшее, b наименьшее" if a > b else f"b наибольшее, a наименьшее")
 #
-#x_min = min(x1_1, x1_2)
-#y_min = min(y1_1, y1_2)
-#x_max = max(x2_1, x2_2)
-#y_max = max(y2_1, y2_2)
+## 4.101(a)
+#a, b, c = map(float, input("Введите a, b, c: ").split())
+#if a > b and a > c:
+#    print("a наибольшее")
+#elif b > a and b > c:
+#    print("b наибольшее")
+#else:
+#    print("c наибольшее")
 #
-#print('Координаты минимального прямоугольника, содержащего оба:')
-#print(f'Левый нижний угол: ({x_min}, {y_min})')
-#print(f'Правый верхний угол: ({x_max}, {y_max})')
+## 4.101(b)
+#a, b, c = map(float, input("Введите a, b, c: ").split())
+#if a < b and a < c:
+#    print("a наименьшее")
+#elif b < a and b < c:
+#    print("b наименьшее")
+#else:
+#    print("c наименьшее")
 #
+## 4.102(a)
+#a, b, c, d = map(float, input("Введите a, b, c, d: ").split())
+#max_val = max(a, b, c, d)
+#print(f"Наибольшее число: {max_val}")
 #
-## 4.99a
-#a = float(input())
-#b = float(input())
-#
-#if a > b:
-#    print(a)
-#if a < b:
-#    print(b)
-#
-#
-## 4.99b
-#a = float(input())
-#b = float(input())
-#
-#maximum = a
-#if a < b:
-#    maximum = b
-#
-#print(maximum)
-#
-#
-## 4.100a
-#a = float(input())
-#b = float(input())
-#
-#if a > b:
-#    print(f'Большее - {a}, меньшее - {b}')
-#if a < b:
-#    print(f'Большее - {b}, меньшее - {a}')
-#
-#
-## 4.100b
-#a = float(input())
-#b = float(input())
-#
-#maximum = a
-#minimum = b
-#
-#if a < b:
-#    maximum = b
-#    minimum = a
-#
-#print(f'Большее - {maximum}, меньшее - {minimum}')
-#
-#
-## 4.101a
-#a = float(input())
-#b = float(input())
-#c = float(input())
-#
-#print(max(a, b, c))
-#
-#
-## 4.101b
-#a = float(input())
-#b = float(input())
-#c = float(input())
-#
-#print(min(a, b, c))
-#
-#
-## 4.102a
-#a = float(input())
-#b = float(input())
-#c = float(input())
-#d = float(input())
-#
-#print(max(a, b, c, d))
-#
-#
-## 4.102b
-#a = float(input())
-#b = float(input())
-#c = float(input())
-#d = float(input())
-#
-#print(min(a, b, c, d))
-#
+## 4.102(b)
+#a, b, c, d = map(float, input("Введите a, b, c, d: ").split())
+#min_val = min(a, b, c, d)
+#print(f"Наименьшее число: {min_val}")
 #
 ## 4.103
-#a = float(input())
+#x = float(input("Введите x: "))
+#print(f"Результат: {(x * 2) * 0.5}")
 #
-#if a >= 0:
-#    print(a)
-#else:
-#    print(-a)
+## 4.104
+#import math
 #
-#
-## 4.104a
-#a = float(input())
-#b = float(input())
-#
-#if a < 0:
-#    a = -a
-#if b < 0:
-#    b = -b
-#
-#p = (a + b) / 2
-#print(p)
-#
-#
-## 4.104b
-#from math import sqrt
-#
-#a = float(input())
-#b = float(input())
-#
-#if a < 0:
-#    a = -a
-#if b < 0:
-#    b = -b
-#
-#p = sqrt(a * b)
-#print(p)
-#
+#a, b = map(float, input("Введите a и b: ").split())
+#a = (a * 2) * 0.5
+#b = (b * 2) * 0.5
+#print(f"Среднее арифметическое: {(a + b) / 2}")
+#print(f"Среднее геометрическое: {math.sqrt(a * b)}")
 #
 ## 4.105
-#a = float(input())
-#b = float(input())
-#
-#if a < 0:
-#    a = -a
-#if b < 0:
-#    b = -b
-#
-#if a > b:
-#    a /= 2
-#
-#print(a)
-#
+#a, b = map(int, input("Введите a и b: ").split())
+#a = a / 2 if abs(a) > abs(b) else a
+#print(f"Результат: {a}")
 #
 ## 4.106
-#from math import sqrt
-#
-#a = float(input())
-#b = float(input())
-#
-#if sqrt(b) < a:
-#    b *= 5
-#
-#print(b)
-#
+#a, b = map(int, input("Введите a и b: ").split())
+#b = b * 5 if math.sqrt(b) < a else b
+#print(f"Результат: {b}")
 #
 ## 4.107
-#a = int(input())
-#b = int(input())
-#c = int(input())
-#
-#if a % 2 == 0:
-#    print(a)
-#if b % 2 == 0:
-#    print(b)
-#if c % 2 == 0:
-#    print(c)
-#
+#a, b, c = map(int, input("Введите a, b, c: ").split())
+#for val in (a, b, c):
+#    if val % 2 == 0:
+#        print(f"Чётное: {val}")
 #
 ## 4.108
-#a = float(input())
-#b = float(input())
-#c = float(input())
-#
-#if a >= 0:
-#    a **= 2
-#if b >= 0:
-#    b **= 2
-#if c >= 0:
-#    c **= 2
-#
-#print(a, b, c)
-#
+#a, b, c = map(float, input("Введите a, b, c: ").split())
+#for val in (a, b, c):
+#    if val > 0:
+#        print(f"Квадрат положительного числа {val}: {val ** 2}")
 #
 ## 4.109
-#a = float(input())
-#b = float(input())
-#c = float(input())
+#a, b, c = map(float, input("Введите a, b, c: ").split())
+#for val in (a, b, c):
+#    if 1.6 < val < 3.8:
+#        print(f"Число в диапазоне (1.6, 3.8): {val}")
 #
-#if 1.6 <= a <= 3.8:
-#    print(a)
-#if 1.6 <= b <= 3.8:
-#    print(b)
-#if 1.6 <= c <= 3.8:
-#    print(c)
+## 4.110
+#a, b, c = map(float, input("Введите a, b, c: ").split())
+#k = sum(1 for x in (a, b, c) if x < 0)
+#print(f"Количество отрицательных чисел: {k}")
